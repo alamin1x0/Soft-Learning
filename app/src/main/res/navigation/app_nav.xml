@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.developeralamin.softlearning.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.developeralamin.softlearning.fragment.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryPostFragment"
+            app:destination="@id/categoryPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryPostFragment"
+        android:name="com.developeralamin.softlearning.fragment.CategoryPostFragment"
+        android:label="CategoryPostFragment"
+        tools:layout="@layout/fragment_home">
+
+        <argument
+            android:name="categroy"
+            android:defaultValue="430"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+</navigation>
